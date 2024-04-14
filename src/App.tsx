@@ -24,6 +24,7 @@ export default function App() {
         { path: "/about", element: <About /> },
         { path: "job_apply", element: <JobApply /> },
         { path: "/demo", element: <Demo /> },
+        {},
       ],
     },
   ]);
