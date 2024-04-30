@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { image } from "../../data/data";
 
 export default function Levels() {
   return (
-    <AnimatePresence>
+    <div className="container mx-auto">
       <h3 className="text-[2.5rem] text-gray-900 pl-8 mt-[2rem]">
         Choose your style & Level
       </h3>
@@ -38,6 +38,6 @@ export default function Levels() {
           );
         })}
       </motion.div>
-    </AnimatePresence>
+    </div>
   );
 }

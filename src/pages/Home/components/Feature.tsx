@@ -52,7 +52,7 @@ export default function Feature() {
               <li key={item.id}>
                 <div className="flex gap-2">
                   <CircleCheck className="w-[20px]  " />
-                  <li>{item.desc}</li>
+                  <p>{item.desc}</p>
                 </div>
               </li>
             );
