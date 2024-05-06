@@ -1,7 +1,8 @@
+import Achievement from "./components/Achievement";
 import Benefit from "./components/Benefit";
+import Divine from "./components/Divine";
 import Feature from "./components/Feature";
 import Welcome from "./components/Welcome";
-import Slider from "./components/Customer";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       <Welcome />
       <Feature />
       <Benefit />
-      <Slider />
+      <Divine />
+      <Achievement />
+      {/* <Gallery /> */}
     </div>
   );
 }

@@ -30,9 +30,9 @@ export default function Welcome() {
       </motion.div>
 
       <motion.img
-        src="yoga/welcome.jpg"
+        src="main.jpg"
         alt="yoga"
-        className="w-[400px]"
+        className=" h-[500px] object-cover rounded-2xl bg-transparent"
         variants={fadeIn("left", 0.5)}
         initial="hidden"
         whileInView="show"

@@ -1,20 +1,46 @@
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Register() {
   const navigate = useNavigate();
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement> | HTMLFormElement) {
+  const [error, setError] = useState<boolean | string>("");
+
+  async function handleSubmit(
+    e: React.FormEvent<HTMLFormElement> | HTMLFormElement
+  ) {
     e.preventDefault();
 
     const fd = new FormData(e.currentTarget);
 
     const data = Object.fromEntries(fd.entries());
 
-    if (data.password !== data.confrimPassword) {
-      return;
+    try {
+      if (data.password === data.confirm_password) {
+        const response = await axios.post(
+          "/",
+          {
+            user_name: data.user_name,
+            password: data.password,
+            confirm_password: data.confrom_password,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        setError(false);
+        console.log(response.status);
+        navigate("/login");
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      console.log(error);
     }
-    navigate("/login");
   }
 
   return (
@@ -24,26 +50,30 @@ export default function Register() {
           type="Email"
           placeholder="Enter your email"
           label="Email"
-          name="RegsiterEmail"
+          name="user_name"
         />
         <Input
           type="password"
           placeholder="Enter your password"
           label="Password"
-          name="RegisterPassword"
+          name="password"
         />
         <Input
           type="password"
           placeholder="Confirm password"
           label="Confrim Password"
-          name="RegisterConfrimPassword"
+          name="confirm_password"
         />
-        <div className="flex items-center gap-4">
+        {error && <p className="text-red-500">password error</p>}
+
+        <div className="flex  items-center gap-4">
           <input
             type="checkbox"
             id="checkbox"
             required
-            name="RegisterCheckbox"
+            name="checkbox"
+            autoComplete="new-password"
+            className="p-4"
           />
           <label htmlFor="checkbox" className="text-sm">
             {" "}

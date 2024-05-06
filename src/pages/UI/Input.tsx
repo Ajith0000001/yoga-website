@@ -21,6 +21,7 @@ export default function Input({
         className="border bg-gray-50 border-gray-300 rounded-xl w-[300px] p-2.5 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-600  outline-none"
         required
         name={name}
+        autoComplete="new-password"
       />
     </div>
   );

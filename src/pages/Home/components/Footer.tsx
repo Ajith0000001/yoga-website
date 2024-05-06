@@ -11,27 +11,24 @@ export default function Footer() {
       initial="hidden"
       whileInView="show"
     >
-      <ul className="flex justify-center items-center gap-6">
-        <Link to="" className="hover:underline ">
+      <ul className="flex flex-col justify-center items-center gap-6">
+        <Link to="/" className="hover:underline ">
           Home
         </Link>
-        <Link to="" className="hover:underline">
+        <Link to="/career" className="hover:underline">
           Career
         </Link>
-        <Link to="" className="hover:underline">
+        <Link to="about" className="hover:underline">
           About us
         </Link>
-        <Link to="" className="hover:underline">
+        <Link to="contact" className="hover:underline">
           Contact us
         </Link>
       </ul>
 
       <div>
-        <p className="w-[400px]">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-          nostrum perspiciatis quasi illo! Quos obcaecati reiciendis sapiente
-          architecto voluptates dignissimos earum tenetur, laboriosam ipsam
-          dicta eligendi nesciunt perspiciatis aperiam soluta.
+        <p className="w-[400px] grid justify-center items-center ">
+          <h2>ADDRESS</h2>
         </p>
       </div>
       <div>
@@ -53,7 +50,9 @@ export default function Footer() {
                 whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring" }}
               >
-                <i className="text-[1.8rem]  cursor-pointer">{item.icon}</i>
+                <Link to={item.link}>
+                  <i className="text-[1.8rem]  cursor-pointer">{item.icon}</i>
+                </Link>
               </motion.li>
             );
           })}

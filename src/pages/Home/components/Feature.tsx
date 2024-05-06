@@ -11,9 +11,9 @@ export default function Feature() {
         initial="hidden"
         whileInView="show"
         exit="hidden"
-        src="yoga/Feature.jpg"
+        src="pose-2.jpg"
         alt="feature"
-        className="w-[500px] rounded-2xl"
+        className="w-[400px] h-[400px] rounded-2xl object-cover"
       />
 
       <motion.div className="flex flex-col  gap-4">
